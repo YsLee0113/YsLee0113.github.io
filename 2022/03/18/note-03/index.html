@@ -16,7 +16,7 @@
 <meta property="og:description" content="有关Cookie和Session(1)Cookie注意事项1.SetCookie()之前不能有任何html输出，空格，空白行都不行 2.SetCookie()之后，在当前页调用echo $_COOKIE[&quot;name&quot;]不会有输出，必须刷新或到下一个页面才可以看到Cookie值 3.使用Cookie的限制，一个浏览器能创建的Cookie数量最多为30个，并且每个不能超过4KB，每">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-03-18T07:37:26.000Z">
-<meta property="article:modified_time" content="2022-03-18T07:58:25.377Z">
+<meta property="article:modified_time" content="2022-03-23T13:36:59.413Z">
 <meta property="article:author" content="Yusong Lee">
 <meta property="article:tag" content="note">
 <meta name="twitter:card" content="summary">
@@ -178,6 +178,7 @@
         <h1 id="有关Cookie和Session"><a href="#有关Cookie和Session" class="headerlink" title="有关Cookie和Session"></a>有关Cookie和Session</h1><h2 id="1-Cookie注意事项"><a href="#1-Cookie注意事项" class="headerlink" title="(1)Cookie注意事项"></a>(1)Cookie注意事项</h2><p>1.SetCookie()之前不能有任何html输出，空格，空白行都不行</p>
 <p>2.SetCookie()之后，在当前页调用<code>echo $_COOKIE[&quot;name&quot;]</code>不会有输出，必须刷新或到下一个页面才可以看到Cookie值</p>
 <p>3.使用Cookie的限制，一个浏览器能创建的Cookie数量最多为30个，并且每个不能超过4KB，每个WEB站点能设置的Cookie总数不能超过20个</p>
+<span id="more"></span>
 <p>4.Cookie是保存在客户端的，如果用户禁用了Cookie，那么Cookie也就失效了</p>
 <p>5.Cookie的生命周期到了，Cookie就会失效</p>
 <p>6.设置一个Cookie时失效时间为time()那么在页面浏览完之后就被删除</p>

