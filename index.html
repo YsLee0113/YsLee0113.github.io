@@ -152,6 +152,150 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-sqli-less-20" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/24/sqli-less-20/">sqli-less-20</a>
+    </h1>
+  
+
+        
+        <a href="/2022/04/24/sqli-less-20/" class="archive-article-date">
+  	<time datetime="2022-04-24T12:19:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SQLI-DUMB-LESS-20"><a href="#SQLI-DUMB-LESS-20" class="headerlink" title="SQLI DUMB LESS-20"></a>SQLI DUMB LESS-20</h1><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><p>(1)登录成功后页面：<br><img src="/img/sqli-18/2002.PNG"><br>(2)根据各种提示，知道需要从cookies入手,将cookie内容全部删除，然后注入,方法与之前相同，例如爆库名<br><code>uname=admin1&#39; and extractvalue(1,concat(0x7e,(select database()),0x7e))#</code><br><img src="/img/sqli-18/2003.PNG"><br><img src="/img/sqli-18/2004.PNG"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-sqli-less-18-19" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/24/sqli-less-18-19/">sqli-less-18,19</a>
+    </h1>
+  
+
+        
+        <a href="/2022/04/24/sqli-less-18-19/" class="archive-article-date">
+  	<time datetime="2022-04-24T12:05:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SQLI-DUMB-LESS-18-19"><a href="#SQLI-DUMB-LESS-18-19" class="headerlink" title="SQLI DUMB LESS-18,19"></a>SQLI DUMB LESS-18,19</h1><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><p>(1)LESS18对username和password无论怎么输入，都没有回显，再看题目，POST - Header Injection - Uagent field - Error based (基于错误的用户代理，头部POST注入)提示从user-agent入手<br><code>&#39;and extractvalue(1,concat(0x7e,(select database()),0x7e)) and &#39;</code><br><img src="/img/sqli-18/1801.PNG"></p>
+<hr>
+<h2 id="2-其余与前面的报错注入相同"><a href="#2-其余与前面的报错注入相同" class="headerlink" title="(2)其余与前面的报错注入相同"></a>(2)其余与前面的报错注入相同</h2><p>(3)根据题意，从Referer入手<br><code>&#39;and extractvalue(1,concat(0x7e,(select database()),0x7e)) and &#39;</code><br><img src="/img/sqli-18/1901.PNG"></p>
+<hr>
+<p>(4)其余于与18关的报错注入相同</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-sqli-less-16" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -691,155 +835,6 @@
 <p>输入<code>?id=1&quot;</code><br>结果：<br><img src="/img/less6/image002.png"><br>发现有报错回显</p>
         
           <a class="article-more-a" href="/2022/04/01/sqli-less-6/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-sqli-less-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sqli-less-5/">sqli_less_5</a>
-    </h1>
-  
-
-        
-        <a href="/2022/04/01/sqli-less-5/" class="archive-article-date">
-  	<time datetime="2022-04-01T08:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="SQLI-DUMB-LESS-5"><a href="#SQLI-DUMB-LESS-5" class="headerlink" title="SQLI DUMB LESS-5"></a>SQLI DUMB LESS-5</h1><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><p>输入<code>?id=1</code><br>结果：<br><img src="/img/less5/image001.png"><br>发现无回显</p>
-<hr>
-<p>输入<code>?id=1&#39;</code><br>结果：<br><img src="/img/less5/image002.png"><br>发现有报错回显</p>
-        
-          <a class="article-more-a" href="/2022/04/01/sqli-less-5/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-sqli-less-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sqli-less-4/">sqli_less_4</a>
-    </h1>
-  
-
-        
-        <a href="/2022/04/01/sqli-less-4/" class="archive-article-date">
-  	<time datetime="2022-04-01T08:53:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="SQLI-DUMB-LESS-4"><a href="#SQLI-DUMB-LESS-4" class="headerlink" title="SQLI DUMB LESS-4"></a>SQLI DUMB LESS-4</h1><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><p>输入<code>?id=1</code><br>结果：<br><img src="/img/less4/image001.png"></p>
-<hr>
-<p>输入<code>?id=1&#39;</code><br>结果：<br><img src="/img/less4/image002.png"></p>
-<hr>
-        
-          <a class="article-more-a" href="/2022/04/01/sqli-less-4/#more">more >></a>
         
       
 
