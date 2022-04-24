@@ -6,15 +6,46 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://YsLee0113.github.io">
-  <title>Archives: 2022 | BoKu No Monogatari</title>
+  <title>xss-labs | BoKu No Monogatari</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="BoKu No Monogatari">
-<meta property="og:url" content="https://yslee0113.github.io/archives/2022/page/3/index.html">
+  <meta name="description" content="#xsslabs(1)进入以后，根据页面显示我们推测name变量存在漏洞，放入xss poc顺利执行?name&#x3D;&lt;script&gt;alert(&#x2F;xss&#x2F;)&lt;&#x2F;script&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xss-labs">
+<meta property="og:url" content="https://yslee0113.github.io/2022/04/24/xss-labs/index.html">
 <meta property="og:site_name" content="BoKu No Monogatari">
+<meta property="og:description" content="#xsslabs(1)进入以后，根据页面显示我们推测name变量存在漏洞，放入xss poc顺利执行?name&#x3D;&lt;script&gt;alert(&#x2F;xss&#x2F;)&lt;&#x2F;script&gt;">
 <meta property="og:locale">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0101.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0102.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0201.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0203.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0301.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0303.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0501.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0502.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0601.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0602.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0701.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0702.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0801.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0802.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0803.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/0902.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/1001.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/1002.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/1101.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/1102.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/1103.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/1104.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/1201.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/1202.PNG">
+<meta property="og:image" content="https://yslee0113.github.io/img/xsslabs/1203.PNG">
+<meta property="article:published_time" content="2022-04-24T15:20:51.000Z">
+<meta property="article:modified_time" content="2022-04-24T16:08:25.460Z">
 <meta property="article:author" content="Yusong Lee">
+<meta property="article:tag" content="note">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yslee0113.github.io/img/xsslabs/0101.PNG">
   
     <link rel="alternative" href="/atom.xml" title="BoKu No Monogatari" type="application/atom+xml">
   
@@ -150,36 +181,58 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-xss-labs" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      xss-labs
+    </h1>
+  
+
+        
+        <a href="/2022/04/24/xss-labs/" class="archive-article-date">
+  	<time datetime="2022-04-24T15:20:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-24</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#xsslabs<br>(1)进入以后，根据页面显示我们推测name变量存在漏洞，放入xss poc顺利执行<br><code>?name=&lt;script&gt;alert(/xss/)&lt;/script&gt;</code><br><img src="/img/xsslabs/0101.PNG"><br><img src="/img/xsslabs/0102.PNG"></p>
+<span id="more"></span>
+<hr>
+<p>(2)从源码来看，它的功能就是通过点击“搜索”按钮，将输入框内的内容以get方式提交给服务器上的level2.php经过服务器的动态处理之后又会将参数keyword的值插入到<h2> </h2>标签之中以及添加到<input>标签中的value属性的值内。需要将属性的引号和标签先闭合<br><code>&quot;&gt;&lt;script&gt;alert(/xss/)&lt;/script&gt;//</code><br><img src="/img/xsslabs/0201.PNG"><br><img src="/img/xsslabs/0203.PNG"></p>
+<hr>
+<p>(3)插入代码，页面将代码原封不动的返回了，但是不通关。查看源代码，发现屏蔽了&lt;&gt;敏感字符，换成不用&lt;&gt;的代码<br><code>&#39;onfocus=javascript:alert(&#39;xss&#39;)&gt;//</code><br>执行后需点击输入框<br><img src="/img/xsslabs/0301.PNG"><br><img src="/img/xsslabs/0303.PNG"></p>
+<hr>
+<p>(4)与第三关相同<br><code>&quot;onfocus=javascript:alert(&#39;xss&#39;)&quot;</code></p>
+<hr>
+<p>(5)无法通过<code>&lt;script&gt;</code>标签或触发事件来执行js代码，可以换一个标签<br><code>?keyword=&quot;&gt; &lt;a href=javascript:alert(&#39;xss&#39;) &gt; xss&lt;/a&gt; //</code><br><img src="/img/xsslabs/0501.PNG"><br><img src="/img/xsslabs/0502.PNG"></p>
+<hr>
+<p>(6)尝试以前的代码发现都不行，尝试变形方法，大小写绕过<br><code>&quot;&gt; &lt;a HrEf=javascript:alert(&#39;xss&#39;) &gt; xss&lt;/a&gt; //</code><br><img src="/img/xsslabs/0601.PNG"><br><img src="/img/xsslabs/0602.PNG"></p>
+<hr>
+<p>(7)尝试基础代码，查看源代码，发现删除了script,在尝试事件触发，同样删除了script，大小写也不能绕过，尝试双写关键字绕过<br><code>&quot;&gt; &lt;a hrhrefef=javascscriptript:alert(&#39;xss&#39;) &gt; xss&lt;/a&gt; //</code><br><img src="/img/xsslabs/0701.PNG"><br><img src="/img/xsslabs/0702.PNG"></p>
+<hr>
+<p>(8)以上方法都不行，尝试编码绕过，将<code>javascscriptript:alert(‘xss’)</code>编码即可<br><img src="/img/xsslabs/0801.PNG"><br><img src="/img/xsslabs/0802.PNG"><br><img src="/img/xsslabs/0803.PNG"></p>
+<hr>
+<p>(9)与第八关一致，代码后再添加任意合法地址即可例如百度<br><img src="/img/xsslabs/0902.PNG"></p>
+<hr>
+<p>(10)查看源代码发现多了三个参数，尝试提交三个参数，发现只有t_sort发生变化，尝试对他进行插入<br><code>&lt;script&gt;alert(&#39;xss&#39;)&lt;/script&gt;&amp;t_sort=&quot; type=&quot;text&quot; onclick=&quot;alert(&#39;xss&#39;)</code><br><img src="/img/xsslabs/1001.PNG"><br><img src="/img/xsslabs/1002.PNG"></p>
+<hr>
+<p>(11)如同第十关一样有隐藏的表单不同的是多了一个名为t_ref的<input>标签。尝试用上一关的方法看看能不能从这几个标签进行突破注入代码。<br><code>?keyword=good job!&amp;t_link=&quot;type=&quot;text&amp;t_history=&quot;type=&quot;text&amp;t_sort=&quot;type=&quot;text&amp;t_ref=&quot;type=&quot;text</code><br><img src="/img/xsslabs/1101.PNG"><br>页面没有反应,看网页源码原来t_sort仍然是接受参数值的，但是里面的双引号被编码了<br>抓包添加referer查看回显<br><img src="/img/xsslabs/1102.PNG"><br>可以看到我们添加的referer头的值出现在了t_ref标签的value属性值中了。<br>接下来就是从这里突破注入恶意代码了<br><img src="/img/xsslabs/1103.PNG"><br>恶意代码成功插入了value属性值中，放包查看结果<br><img src="/img/xsslabs/1104.PNG"></p>
+<hr>
+<p>(12)看网页源码看到了t_ua这样一个标签，并且其中的value属性的值与数据包中User-Agent头的值一致<br><img src="/img/xsslabs/1201.PNG"><br>先闭合前面的value属性，然后构造恶意代码<br><code>&quot;type=&quot;text&quot; onclick=&quot;alert(&#39;xss&#39;)</code><br><img src="/img/xsslabs/1202.PNG"><br>放包查看结果<br><img src="/img/xsslabs/1203.PNG"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/18/note-04/" class="archive-article-date">
-  	<time datetime="2022-03-18T07:59:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/18/note-04/">note_04</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,136 +244,105 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://yslee0113.github.io/2022/04/24/xss-labs/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/18/note-03/" class="archive-article-date">
-  	<time datetime="2022-03-18T07:37:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/04/24/sqli-less-20/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sqli-less-20</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/18/note-03/">note_03</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/17/note-02/" class="archive-article-date">
-  	<time datetime="2022-03-17T12:13:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/17/note-02/">note_02</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/03/17/note-01/" class="archive-article-date">
-  	<time datetime="2022-03-17T09:08:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-03-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/03/17/note-01/">note_01</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2022/page/2/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2022/">1</a><a class="page-number" href="/archives/2022/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
   
 
 
@@ -344,8 +366,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

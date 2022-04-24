@@ -152,6 +152,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-xss-labs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/24/xss-labs/">xss-labs</a>
+    </h1>
+  
+
+        
+        <a href="/2022/04/24/xss-labs/" class="archive-article-date">
+  	<time datetime="2022-04-24T15:20:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#xsslabs<br>(1)进入以后，根据页面显示我们推测name变量存在漏洞，放入xss poc顺利执行<br><code>?name=&lt;script&gt;alert(/xss/)&lt;/script&gt;</code><br><img src="/img/xsslabs/0101.PNG"><br><img src="/img/xsslabs/0102.PNG"></p>
+        
+          <a class="article-more-a" href="/2022/04/24/xss-labs/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-sqli-less-20" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -761,80 +833,6 @@
 <p>输入<code>?id=1&#39; and sleep(3) --+</code><br>结果：<br><img src="/img/less8,9,10/image002.png"><br>发现明显时延，说明延时注入可用</p>
         
           <a class="article-more-a" href="/2022/04/01/sqli-less-8-9-10/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">note</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-sqli-less-6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/01/sqli-less-6/">sqli_less_6</a>
-    </h1>
-  
-
-        
-        <a href="/2022/04/01/sqli-less-6/" class="archive-article-date">
-  	<time datetime="2022-04-01T08:54:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="SQLI-DUMB-LESS-6"><a href="#SQLI-DUMB-LESS-6" class="headerlink" title="SQLI DUMB LESS-6"></a>SQLI DUMB LESS-6</h1><h3 id="1"><a href="#1" class="headerlink" title="(1)"></a>(1)</h3><p>输入<code>?id=1</code><br>结果：<br><img src="/img/less6/image001.png"><br>发现无回显</p>
-<hr>
-<p>输入<code>?id=1&quot;</code><br>结果：<br><img src="/img/less6/image002.png"><br>发现有报错回显</p>
-        
-          <a class="article-more-a" href="/2022/04/01/sqli-less-6/#more">more >></a>
         
       
 
